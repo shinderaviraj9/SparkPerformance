@@ -61,3 +61,4 @@ print(joined_df.rdd.getNumPartitions())
 # joined_df.explain("formatted")
 (joined_df.withColumn("partition_records",F.spark_partition_id())
             .groupBy("partition_records").count().orderBy(F.col("count").desc()).show(5))
+
